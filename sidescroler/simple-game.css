@@ -20,7 +20,13 @@
   }
   
   .coin {
-    background: rgb(241, 229, 89);
+    background-size: contain;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    -webkit-animation: animation 2s infinite;
+            animation: animation 2s infinite;
+    -webkit-animation-timing-function: steps(1, end);
+            animation-timing-function: steps(1, end);
   }
   
   .player {
@@ -41,3 +47,22 @@
     max-height: 600px;
     position: relative;
   }
+
+  @-webkit-keyframes animation{
+    0%{
+        background-image: url('/sprites/coin_1.png');
+    }
+    25%{
+        background-image: url('/sprites/coin_2.png');
+    }
+    50%{
+        background-image: url('/sprites/coin_3.png');
+    }
+    75%{
+        background-image: url('/sprites/coin_2.png');
+    }
+    100%{
+        background-image: url('/sprites/coin_1.png');
+    }
+
+}
